@@ -2,6 +2,8 @@ import styled, { css } from "styled-components";
 
 import { breakAt, BreakpointSize } from "./Breakpoints";
 
+const colorYellow = "#ffc107";
+
 const Root = styled.div`
   color: #fff;
   padding: 100px 0;
@@ -14,8 +16,26 @@ const Root = styled.div`
 `;
 
 const Title = styled.h1`
+  position: relative;
   font-weight: 700;
   letter-spacing: 2px;
+  margin-bottom: 25px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    background-color: ${colorYellow};
+    height: 5px;
+    width: 70px;
+  }
+
+  strong {
+    color: ${colorYellow};
+  }
 `;
 
 const Content = styled.div`
@@ -33,6 +53,7 @@ const Content = styled.div`
   li {
     &::before {
       content: "\\2713\\0020";
+      color: ${colorYellow};
     }
   }
 `;
@@ -51,7 +72,26 @@ const Container = styled.div`
   }
 `;
 
-const Hero = ({ image, title, children }) => (
+interface PropType {
+  /**
+   * Imagem de fundo do Componente
+   */
+  image: string;
+  /**
+   * Título do Componente
+   */
+  title?: string | React.ReactNode;
+  /**
+   * Conteúdo do Componente
+   */
+  children: React.ReactNode;
+}
+
+const Hero = ({
+  image,
+  title = "Título do Componente",
+  children,
+}: PropType) => (
   <Root image={image}>
     <Container>
       <Title>{title}</Title>
