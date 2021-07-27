@@ -25,7 +25,7 @@ export const usage = () => (
       <h5>{text("H5", "Componente Heading 5")}</h5>
     </Heading>
     <Heading>
-      <h6>Componente Heading 6</h6>
+      <h6>{text("H6", "Componente Heading 6")}</h6>
     </Heading>
   </>
 );
