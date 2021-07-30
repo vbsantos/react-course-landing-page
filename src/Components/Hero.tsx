@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 
-import { breakAt, BreakpointSize } from "./Breakpoints";
+import { breakAt, BreakpointSizes } from "styles/Breakpoints";
 
 const colorYellow = "#ffc107";
 
@@ -39,12 +39,12 @@ const Container = styled.div`
   width: 100%;
   padding: 0 8px;
 
-  ${breakAt(BreakpointSize.lg)} {
+  ${breakAt(BreakpointSizes.lg)} {
     width: 1140px;
     margin: 0 auto;
   }
 
-  ${breakAt(BreakpointSize.sm)} {
+  ${breakAt(BreakpointSizes.sm)} {
     padding: 0 16px;
   }
 `;

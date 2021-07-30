@@ -1,5 +1,5 @@
 import { addDecorator, addParameters } from "@storybook/react";
-import GlobalStyle from "../src/Components/GlobalStyle";
+import GlobalStyle from "styles/GlobalStyle";
 
 addDecorator((storyFn) => (
   <>
