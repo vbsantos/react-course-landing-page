@@ -53,15 +53,15 @@ interface PropType {
   /**
    * Imagem de fundo do Componente
    */
-  image: string;
+  image?: string;
   /**
    * Conteúdo do Componente
    */
-  children: React.ReactNode;
+  children?: React.ReactNode;
 }
 
 const Hero = ({ image, children }: PropType) => (
-  <Root image={image}>
+  <Root image={image} data-testid="hero">
     <Container>
       <Content>{children}</Content>
     </Container>
