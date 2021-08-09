@@ -1,5 +1,5 @@
 import Heading from "./Heading";
-import { render } from "@testing-library/react";
+import { render } from "test-utils";
 
 test("match snapshot", () => {
   // coloca dentro de um fragment

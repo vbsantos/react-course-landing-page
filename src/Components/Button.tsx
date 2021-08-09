@@ -75,8 +75,15 @@ const getDarkColor = ({ theme, color }) => {
   }
 };
 
-const getColorText = ({ theme }) => {
-  return theme?.colors?.primary?.text || "black";
+const getColorText = ({ theme, color }) => {
+  switch (color) {
+    case ButtonColors.primary:
+      return theme.colors.primary.text;
+    case ButtonColors.danger:
+      return theme.colors.danger.text;
+    default:
+      return "#212121";
+  }
 };
 
 const getLinkColorText = (props) => {

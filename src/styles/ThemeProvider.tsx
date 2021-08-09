@@ -1,6 +1,8 @@
 import { ThemeProvider as StyledThemeProvider } from "styled-components";
 
-interface ThemeInterface {
+export const ThemeNames = ["light", "ocean"];
+
+interface ColorInterface {
   colors: {
     primary: {
       main: string;
@@ -15,8 +17,12 @@ interface ThemeInterface {
     };
   };
 }
+interface ThemeInterface {
+  light: ColorInterface;
+  ocean: ColorInterface;
+}
 
-const theme: ThemeInterface = {
+const light: ColorInterface = {
   colors: {
     primary: {
       main: "#ffc107",
@@ -32,8 +38,28 @@ const theme: ThemeInterface = {
   },
 };
 
-function ThemeProvider({ children }) {
-  return <StyledThemeProvider theme={theme}>{children}</StyledThemeProvider>;
+const allThemes: ThemeInterface = {
+  light,
+  ocean: {
+    ...light,
+    colors: {
+      ...light.colors,
+      primary: {
+        main: "#2196f3",
+        dark: "#1769aa",
+        light: "#4dabf5",
+        text: "#fff",
+      },
+    },
+  },
+};
+
+function ThemeProvider({ theme = "light", children }) {
+  return (
+    <StyledThemeProvider theme={allThemes[theme]}>
+      {children}
+    </StyledThemeProvider>
+  );
 }
 
 export default ThemeProvider;

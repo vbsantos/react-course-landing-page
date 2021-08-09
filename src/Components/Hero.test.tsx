@@ -1,5 +1,5 @@
 import Hero from "./Hero";
-import { render } from "@testing-library/react";
+import { render } from "test-utils";
 
 // test("renders component Hero with children", () => {
 //   const component = render(

@@ -10,7 +10,7 @@ exports[`renders a text without ThemeProvider 1`] = `
   cursor: pointer;
   background-color: #e0e0e0;
   border: 2px solid #e0e0e0;
-  color: black;
+  color: #212121;
 }
 
 .c0:disabled {
