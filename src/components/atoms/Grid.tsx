@@ -30,13 +30,7 @@ interface PropType {
   children?: ReactNode;
 }
 
-const Grid = ({
-  children = undefined,
-  sm = undefined,
-  md = undefined,
-  lg = undefined,
-  xl = undefined,
-}: PropType) => {
+const Grid = ({ children, sm, md, lg, xl }: PropType) => {
   return (
     <GridStyledComponent sm={sm} md={md} lg={lg} xl={xl}>
       {children}
