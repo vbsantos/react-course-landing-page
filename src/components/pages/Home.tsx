@@ -12,9 +12,50 @@ import Grid from "components/atoms/Grid";
 import Feature from "components/atoms/Feature";
 import Section from "components/molecules/Section";
 
+import ProductGrid from "components/organisms/ProductGrid";
+
+import Footer from "components/organisms/Footer";
+
 import HeroImage from "assets/hero.jpg";
 import AboutVideo from "assets/about.mp4";
-import Footer from "components/organisms/Footer";
+import ImageProductGrid1 from "assets/serv-01.jpg";
+import ImageProductGrid2 from "assets/serv-02.jpg";
+import ImageProductGrid3 from "assets/serv-03.jpg";
+import ImageProductGrid4 from "assets/serv-04.jpg";
+import ImageProductGrid5 from "assets/serv-05.jpg";
+
+const products = [
+  {
+    id: 1,
+    image: ImageProductGrid1,
+    title: "1ª Habilitação Carro e Moto",
+    summary: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+  },
+  {
+    id: 2,
+    image: ImageProductGrid2,
+    title: "1ª Habilitação Carro",
+    summary: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+  },
+  {
+    id: 3,
+    image: ImageProductGrid3,
+    title: "1ª Habilitação Moto",
+    summary: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+  },
+  {
+    id: 4,
+    image: ImageProductGrid4,
+    title: "Mudança de Categoria Caminhão",
+    summary: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+  },
+  {
+    id: 5,
+    image: ImageProductGrid5,
+    title: "Aulas Avulsas",
+    summary: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+  },
+];
 
 const Home = () => (
   <>
@@ -56,6 +97,7 @@ const Home = () => (
       <Heading>
         <h2>Conheça nossos serviços</h2>
       </Heading>
+      <ProductGrid products={products} />
     </Section>
 
     <Section>

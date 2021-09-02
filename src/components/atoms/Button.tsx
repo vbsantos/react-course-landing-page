@@ -106,7 +106,7 @@ const getOutlinedColorText = (props) => {
   return "#212121";
 };
 
-const Button = styled.button`
+const ButtonBase = styled.button`
   font-size: 1rem;
   font-weight: 600;
   text-transform: uppercase;
@@ -128,7 +128,7 @@ const Button = styled.button`
   }
 `;
 
-const ButtonOutlined = styled(Button)`
+const ButtonOutlined = styled(ButtonBase)`
   background-color: transparent;
   color: ${getOutlinedColorText};
 
@@ -138,7 +138,7 @@ const ButtonOutlined = styled(Button)`
   }
 `;
 
-const ButtonLink = styled(Button)`
+const ButtonLink = styled(ButtonBase)`
   background-color: transparent;
   border-color: transparent;
   color: ${getLinkColorText};
@@ -152,7 +152,7 @@ const ButtonLink = styled(Button)`
   }
 `;
 
-const ButtonWrapper = (props: ButtonPropTypes) => {
+const Button = (props: ButtonPropTypes) => {
   switch (props.variant) {
     case ButtonVariants.outlined:
       return <ButtonOutlined {...props} />;
@@ -161,8 +161,8 @@ const ButtonWrapper = (props: ButtonPropTypes) => {
       return <ButtonLink {...props} />;
 
     default:
-      return <Button {...props} />;
+      return <ButtonBase {...props} />;
   }
 };
 
-export default ButtonWrapper;
+export default Button;
