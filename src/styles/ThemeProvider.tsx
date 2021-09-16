@@ -54,7 +54,7 @@ const allThemes: ThemeInterface = {
   },
 };
 
-function ThemeProvider({ theme = "light", children }) {
+function ThemeProvider({ theme = "ocean", children }) {
   return (
     <StyledThemeProvider theme={allThemes[theme]}>
       {children}
