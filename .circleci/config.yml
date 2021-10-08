@@ -9,8 +9,7 @@ jobs:
       - image: cimg/node:14.18.0-browsers
     steps:
       - checkout
-      - node/install:
-        install-yarn: true
+      - run: yarn install --frozen-lockfile
       - run: node --version
       - run: yarn --version
 
