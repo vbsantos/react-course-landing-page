@@ -1,21 +1,21 @@
 version: 2.1
 
 orbs:
-  node: circleci/node@4.7.0
+  	node: circleci/node@4.7.0
 
 jobs:
-  tests:
-    docker:
-      - image: cimg/node:14.18.0-browsers
-    steps:
-      - checkout
-      - run: node --version
-      - run: yarn --version
-      - node/install-packages:
-        pkg-manager: yarn
-      - run: yarn lint
+	tests:
+		docker:
+			- image: cimg/node:14.18.0-browsers
+		steps:
+			- checkout
+			- run: node --version
+			- run: yarn --version
+			- node/install-packages:
+				  pkg-manager: yarn
+			- run: yarn lint
 
 workflows:
-  ci:
-    jobs:
-      - tests
+	ci:
+		jobs:
+			- tests
