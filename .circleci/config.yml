@@ -1,0 +1,25 @@
+version: 2.1
+
+orbs:
+  node: circleci/node@4.7.0
+  codecov: codecov/codecov@3.1.1
+
+jobs:
+  tests:
+    docker:
+      - image: cimg/node:14.18.0-browsers
+    steps:
+      - checkout
+      - run: node --version
+      - run: yarn --version
+      - node/install-packages:
+          pkg-manager: yarn
+      - run: yarn lint
+      - run: yarn coverage
+      - codecov/upload:
+          file: coverage/*.json
+
+workflows:
+  ci:
+    jobs:
+      - tests
